@@ -41,8 +41,8 @@ export default function LoginScreen() {
 
       if (response.ok) {
         // Store token securely
-        await SecureStore.setItemAsync('auth_token', data.access_token);
-        await SecureStore.setItemAsync('username', username);
+        await storage.setItem('auth_token', data.access_token);
+        await storage.setItem('username', username);
         
         // Navigate to main screen
         router.replace('/main');
