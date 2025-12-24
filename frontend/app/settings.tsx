@@ -42,8 +42,8 @@ export default function SettingsScreen() {
 
   const loadSavedSettings = async () => {
     try {
-      const savedBeach = await SecureStore.getItemAsync('selected_beach');
-      const savedBeachPost = await SecureStore.getItemAsync('selected_beach_post');
+      const savedBeach = await storage.getItem('selected_beach');
+      const savedBeachPost = await storage.getItem('selected_beach_post');
       if (savedBeach) {
         setSelectedBeach(JSON.parse(savedBeach));
         if (savedBeachPost) {
