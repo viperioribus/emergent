@@ -1,7 +1,12 @@
-import * as SecureStore from 'expo-secure-store';
 import { Platform } from 'react-native';
 
 const isWeb = Platform.OS === 'web';
+
+// Lazy load SecureStore only on native platforms
+let SecureStore: any = null;
+if (!isWeb) {
+  SecureStore = require('expo-secure-store');
+}
 
 export const storage = {
   async setItem(key: string, value: string): Promise<void> {
