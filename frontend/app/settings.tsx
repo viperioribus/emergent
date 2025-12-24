@@ -57,7 +57,7 @@ export default function SettingsScreen() {
 
   const loadBeaches = async () => {
     try {
-      const token = await SecureStore.getItemAsync('auth_token');
+      const token = await storage.getItem('auth_token');
       const response = await fetch(`${EXPO_PUBLIC_BACKEND_URL}/api/beaches`, {
         headers: {
           Authorization: `Bearer ${token}`,
