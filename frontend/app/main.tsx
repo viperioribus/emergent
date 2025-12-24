@@ -24,8 +24,8 @@ export default function MainScreen() {
           text: 'Logout',
           style: 'destructive',
           onPress: async () => {
-            await SecureStore.deleteItemAsync('auth_token');
-            await SecureStore.deleteItemAsync('username');
+            await storage.deleteItem('auth_token');
+            await storage.deleteItem('username');
             router.replace('/');
           },
         },
