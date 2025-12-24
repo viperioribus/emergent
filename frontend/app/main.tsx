@@ -8,7 +8,7 @@ import {
   Alert,
 } from 'react-native';
 import { useRouter } from 'expo-router';
-import * as SecureStore from 'expo-secure-store';
+import { storage } from '../utils/storage';
 import { Ionicons } from '@expo/vector-icons';
 
 export default function MainScreen() {
