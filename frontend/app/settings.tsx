@@ -109,14 +109,14 @@ export default function SettingsScreen() {
     setSelectedBeach(beach);
     setSelectedBeachPost(null);
     setBeachPosts([]);
-    await SecureStore.setItemAsync('selected_beach', JSON.stringify(beach));
-    await SecureStore.deleteItemAsync('selected_beach_post');
+    await storage.setItem('selected_beach', JSON.stringify(beach));
+    await storage.deleteItem('selected_beach_post');
     loadBeachPosts(beach.id);
   };
 
   const handleBeachPostSelect = async (post: BeachPost) => {
     setSelectedBeachPost(post);
-    await SecureStore.setItemAsync('selected_beach_post', JSON.stringify(post));
+    await storage.setItem('selected_beach_post', JSON.stringify(post));
     Alert.alert('Success', 'Beach post selected successfully');
   };
 
